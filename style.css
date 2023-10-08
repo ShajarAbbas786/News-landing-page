@@ -1,0 +1,269 @@
+@import url('https://fonts.google.com/specimen/Inter');
+:root{
+    --Soft-red: hsl(5, 85%, 63%);
+    --Soft-orange: hsl(35, 77%, 62%);
+    --Off-white: hsl(36, 100%, 99%) ;
+    --Grayish-blue: hsl(233, 8%, 79%);
+     --Dark-grayish-blue: hsl(236, 13%, 42%);
+     --Very-dark-blue: hsl(240, 100%, 5%);
+}
+
+/* Default styles */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter',sans-serif;
+}
+body{
+    display: flex;
+    width: 100%;
+   min-height: 100vh;
+align-items: center;
+}
+p{
+    Font-size: 15px;
+}
+ul{
+    list-style: none;
+}
+img{
+    max-width: 100%;
+}
+.container{
+    max-width: 1100px;
+    margin:0 auto;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:32px 0;
+}
+.menu{
+    display: none;
+    cursor: pointer;
+}
+.back-drop{
+    display: none;
+}
+.close{
+    display: none;
+}
+.nav-links{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+.nav-links li{
+    color: var(--Dark-grayish-blue);
+    cursor: pointer;
+}
+.nav-links li:hover{
+    color: var(--Soft-red);
+}
+
+.main-conatiner{
+    display: flex;
+    gap: 48px;
+}
+.blog-info{
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+.blog-title{
+    font-size: 48px;
+    color: var(--Very-dark-blue);
+    width: 300px;
+}
+.blog-content{
+    color: var(--Dark-grayish-blue);
+    width: 310px;
+}
+/* Button */
+.read{
+    background-color: var(--Soft-red);
+    color:var(--Off-white);
+    padding: 15px 24px 15px 24px;
+    outline: none;
+    border: 0;
+    width: 200px;
+   margin-top: 50px;
+   font-weight: 700;
+   letter-spacing: 5px;
+   cursor: pointer;
+}
+.read:hover{
+      background-color: var(--Very-dark-blue);
+}
+.new-container h2 {
+ color: var(--Soft-orange);
+ font-size: 24px;
+}
+
+h3:hover{
+    color: var(--Soft-orange);
+}
+.new{
+    background-color: var(--Very-dark-blue);
+}
+.new-container{
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+}
+.new-blogs{
+      display: flex;
+      flex-direction: column;
+      margin-top: 24px;
+      gap: 24px;
+     
+}
+.new-blog{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.top-info{
+    margin-left: 20px;
+}
+
+.new-blog::after{
+    content: "";
+    margin-top: 24px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--Grayish-blue);
+}
+.new-blog:last-child::after{
+    display: none;
+}
+.new-title{
+    color: var(--Off-white);
+}
+.new-content{
+    color: var(--Grayish-blue);
+}
+
+/* Bottom */
+.top-blogs{
+    margin-top: 48px;
+    display: flex;
+
+}
+.number{
+    margin-bottom: 15px;
+}
+.top-title{
+    margin-bottom: 15px;
+}
+.top-blog{
+    display: flex;
+    width: 400px;
+}
+
+
+.number{
+ color: var(--Grayish-blue);
+ font-weight: 800;
+ font-size: 32px;
+}
+@media (max-width:960px){
+    .nav-links{
+        display: none;
+    }
+    .menu{
+        display: block;
+    }
+    nav{
+        padding-inline: 1rem;
+    }
+    .blog-info{
+        display: flex;
+        flex-direction: column;
+    }
+    .main-conatiner{
+        display: flex;
+        flex-direction: column;
+      
+    }
+    .top-blogs{
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        margin: 20px 20px 0 20px;
+    }
+    .main-blog{
+        margin: 0px 20px;
+    }
+    .new{
+        margin: 20px 20px 0 20px;
+    }
+}
+@media (max-width:376px) {
+    .top-blogs{
+       
+        margin: 50px 20px 0 20px;
+    }
+    .top-info{
+        margin: 0px 0px 0px 20px ;
+    }
+    .i,.iii{
+        width: 200px;
+    }
+    .ii{
+        width:175px;
+    }
+    .nav-links{
+        position: fixed;
+        width: 200px;
+        top: 0;
+        right: -220px;
+        height: 200vh;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        padding-top: 200px;
+        padding-left: 30px;
+        z-index: 99;
+        transition: all 650ms ease-in-out;
+    }
+    .nav-link{
+        margin-bottom: 30px;
+        padding-right: 150px;
+    }
+   nav .nav-links.active{
+       right: 0;
+    }
+    nav{
+        position: sticky;
+    }
+    .back-drop{
+        display: none;
+        position: fixed;
+        top: 0;
+        left:0;
+        background: var(--Off-white);
+        height: 200vh;
+        width: 100vw;
+        opacity: 0.2;
+    }
+    .back-drop.active{
+        display: block;
+    }
+    .menu{
+        display: block;
+    }
+    .menu.active{
+        display: none;
+    }
+    .close{
+        display: none;
+    }
+    .close.active{
+        display: inline-block;
+        z-index: 100;
+    }
+}
